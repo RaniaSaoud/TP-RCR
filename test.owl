@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/family#"
+     xml:base="http://www.example.org/family"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Ontology rdf:about="http://www.example.org/family"/>
+
+  <!-- Classes -->
+  <owl:Class rdf:about="http://www.example.org/family#Person"/>
+  <owl:Class rdf:about="http://www.example.org/family#Man" rdfs:subClassOf="http://www.example.org/family#Person"/>
+  <owl:Class rdf:about="http://www.example.org/family#Woman" rdfs:subClassOf="http://www.example.org/family#Person"/>
+
+  <!-- Object Properties -->
+  <owl:ObjectProperty rdf:about="http://www.example.org/family#hasParent">
+    <rdfs:domain rdf:resource="http://www.example.org/family#Person"/>
+    <rdfs:range rdf:resource="http://www.example.org/family#Person"/>
+  </owl:ObjectProperty>
+
+  <!-- Individuals -->
+  <owl:NamedIndividual rdf:about="http://www.example.org/family#John">
+    <rdf:type rdf:resource="http://www.example.org/family#Man"/>
+    <hasParent rdf:resource="http://www.example.org/family#Jane"/>
+  </owl:NamedIndividual>
+
+  <owl:NamedIndividual rdf:about="http://www.example.org/family#Jane">
+    <rdf:type rdf:resource="http://www.example.org/family#Woman"/>
+  </owl:NamedIndividual>
+
+</rdf:RDF>

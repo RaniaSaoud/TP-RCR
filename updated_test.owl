@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.example.org/family"
+         xmlns="http://www.example.org/family#">
+
+<owl:Ontology rdf:about="http://www.example.org/family"/>
+
+<owl:ObjectProperty rdf:about="#hasParent">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#Person"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Person"/>
+
+<owl:Class rdf:about="#Man"/>
+
+<owl:Class rdf:about="#Woman"/>
+
+<owl:NamedIndividual rdf:about="#John">
+  <rdf:type rdf:resource="#Man"/>
+  <hasParent rdf:resource="#Jane"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jane">
+  <rdf:type rdf:resource="#Woman"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
